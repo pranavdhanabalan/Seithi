@@ -1,11 +1,14 @@
 package com.pranavd.seithi;
 
 import com.pranavd.seithi.Configure.ConfigureCommand;
+import com.pranavd.seithi.WhatsApp.Commands.Send;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
 @Command(name="seithi",
-        subcommands={ConfigureCommand.class},
+        subcommands={ConfigureCommand.class,
+        Send.class
+        },
         mixinStandardHelpOptions = true,
         version="seithi 1.0",
         description="Open source messaging automation toolkit."

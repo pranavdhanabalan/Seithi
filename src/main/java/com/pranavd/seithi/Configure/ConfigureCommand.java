@@ -2,7 +2,7 @@ package com.pranavd.seithi.Configure;
 
 import picocli.CommandLine.Command;
 
-@Command(name="configure",
+@Command(name="config",
         subcommands = {WhatsAppConfigCommand.class},
         description = "Configure messaging providers."
 )

@@ -10,14 +10,22 @@ public class WhatsAppClient {
 
     HttpClient client=HttpClient.newHttpClient();
 
-    public void sendText(String phoneNo,String message){
+    public void sendText(String phoneNo,String message,String VERSION,String PHONE_NUMBER_ID,String YOUR_ACCESS_TOKEN){
 
-
-        String json = "...";
+        String json = """
+            {
+              "messaging_product": "whatsapp",
+              "to": "%s",
+              "type": "text",
+              "text": {
+                "body": "%s"
+              }
+            }
+            """.formatted(phoneNo, message);
 
         HttpRequest request=HttpRequest.newBuilder()
                 .uri(URI.create(
-                        "https://graph.facebook.com/v23.0/"+PHONE_NUMBER_ID+"/messages"))
+                        "https://graph.facebook.com/"+VERSION+"/"+PHONE_NUMBER_ID+"/messages"))
                 .header("Content-Type","application/json")
                 .header("Authorization","Bearer "+YOUR_ACCESS_TOKEN)
                 .POST(HttpRequest.BodyPublishers.ofString(json))

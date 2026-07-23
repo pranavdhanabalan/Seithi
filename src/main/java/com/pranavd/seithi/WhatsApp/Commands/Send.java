@@ -18,13 +18,6 @@ public class Send implements Runnable{
     private String to;
 
     @Option(
-            names={"-t","--to"},
-            description = "Required Phone Number.",
-            required = true
-    )
-    private String to;
-
-    @Option(
             names={"-m","--message"},
             description = "Message to Send.",
             required = true
@@ -33,6 +26,7 @@ public class Send implements Runnable{
 
     @Override
     public void run(){
-        WhatsAppService.sendText(to,message);
+        WhatsAppService whatsAppService=new WhatsAppService();
+        whatsAppService.sendText(to,message);
     }
 }
