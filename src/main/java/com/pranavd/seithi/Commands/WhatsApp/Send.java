@@ -1,6 +1,6 @@
-package com.pranavd.seithi.WhatsApp.Commands;
+package com.pranavd.seithi.Commands.WhatsApp;
 
-import com.pranavd.seithi.WhatsApp.WhatsAppService;
+import com.pranavd.seithi.Service.WhatsAppService;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 

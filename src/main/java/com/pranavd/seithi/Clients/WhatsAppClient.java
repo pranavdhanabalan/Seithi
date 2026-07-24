@@ -1,4 +1,4 @@
-package com.pranavd.seithi.WhatsApp;
+package com.pranavd.seithi.Clients;
 
 import java.io.IOException;
 import java.net.URI;

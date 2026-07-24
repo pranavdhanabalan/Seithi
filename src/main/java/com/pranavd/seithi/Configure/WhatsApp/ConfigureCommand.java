@@ -1,4 +1,4 @@
-package com.pranavd.seithi.Configure;
+package com.pranavd.seithi.Configure.WhatsApp;
 
 import picocli.CommandLine.Command;
 
@@ -7,11 +7,10 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.Scanner;
 
-@Command(
-        name="whatsapp",
-        description="Configure WhatsApp information."
+@Command(name="config",
+        description = "Configure messaging providers."
 )
-public class WhatsAppConfigCommand implements Runnable{
+public class ConfigureCommand implements Runnable{
 
     @Override
     public void run(){

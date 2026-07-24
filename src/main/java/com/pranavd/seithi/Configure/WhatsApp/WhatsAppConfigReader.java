@@ -1,4 +1,4 @@
-package com.pranavd.seithi.Configure;
+package com.pranavd.seithi.Configure.WhatsApp;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,10 +20,6 @@ public class WhatsAppConfigReader {
             accessToken = properties.getProperty("whatsapp.accessToken");
             phoneNumberId = properties.getProperty("whatsapp.phoneNumberId");
             apiVersion = properties.getProperty("whatsapp.apiVersion");
-
-            System.out.println(accessToken);
-            System.out.println(phoneNumberId);
-            System.out.println(apiVersion);
 
         } catch (IOException e) {
             e.printStackTrace();

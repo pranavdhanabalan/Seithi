@@ -1,6 +1,7 @@
-package com.pranavd.seithi.WhatsApp;
+package com.pranavd.seithi.Service;
 
-import com.pranavd.seithi.Configure.WhatsAppConfigReader;
+import com.pranavd.seithi.Configure.WhatsApp.WhatsAppConfigReader;
+import com.pranavd.seithi.Clients.WhatsAppClient;
 
 public class WhatsAppService {
 

@@ -1,7 +1,7 @@
 package com.pranavd.seithi;
 
-import com.pranavd.seithi.Configure.ConfigureCommand;
-import com.pranavd.seithi.WhatsApp.Commands.Send;
+import com.pranavd.seithi.Configure.WhatsApp.ConfigureCommand;
+import com.pranavd.seithi.Commands.WhatsApp.Send;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
