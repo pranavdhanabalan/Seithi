@@ -1,5 +1,6 @@
 package com.pranavd.seithi.Commands.WhatsApp;
 
+import com.pranavd.seithi.Service.WhatsAppService;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 
@@ -9,7 +10,7 @@ import java.nio.file.Path;
         name="bulk-send",
         description = "Send a WhatsApp messages in bulk."
 )
-public class Bulk {
+public class Bulk implements Runnable{
 
     @Option(
             names={"-f","--file"},
@@ -19,14 +20,15 @@ public class Bulk {
     private Path file;
 
     @Option(
-            names={"-t","--to"},
-            description="Phone numbers if Customers.",
+            names={"-m","--message"},
+            description="Message to Send.",
             required = true
     )
-    private String to;
+    private String message;
 
     @Override
     public void run(){
-
+        WhatsAppService whatsAppService=new WhatsAppService();
+        whatsAppService.sendBulkText(file,message);
     }
 }
