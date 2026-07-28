@@ -1,5 +1,6 @@
 package com.pranavd.seithi.Parser;
 
+import com.pranavd.seithi.Service.WhatsAppService;
 import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileInputStream;
@@ -15,7 +16,7 @@ public class ReadExcel {
 
     private final Path FILE_PATH ;
 
-    ReadExcel(Path path){
+    public ReadExcel(Path path){
         FILE_PATH=path;
     }
 
@@ -49,6 +50,8 @@ public class ReadExcel {
                     String cellValue=formatter.formatCellValue(cell);
                     rowMap.put(headers.get(j),cellValue);
                 }
+                WhatsAppService whatsAppService=new WhatsAppService();
+                whatsAppService.sendDetails(rowMap);
             }
 
         }

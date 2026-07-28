@@ -29,6 +29,6 @@ public class Bulk implements Runnable{
     @Override
     public void run(){
         WhatsAppService whatsAppService=new WhatsAppService();
-        whatsAppService.sendBulkText(file,message);
+        whatsAppService.sendCommandDetails(file,message);
     }
 }
