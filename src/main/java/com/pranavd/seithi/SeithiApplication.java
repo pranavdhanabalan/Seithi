@@ -2,11 +2,12 @@ package com.pranavd.seithi;
 
 import com.pranavd.seithi.Configure.WhatsApp.ConfigureCommand;
 import com.pranavd.seithi.Commands.WhatsApp.Send;
+import com.pranavd.seithi.Configure.WhatsApp.WhatsAppConfigCommand;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
 @Command(name="seithi",
-        subcommands={ConfigureCommand.class,
+        subcommands={WhatsAppConfigCommand.class,
         Send.class
         },
         header = {
