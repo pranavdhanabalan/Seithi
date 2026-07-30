@@ -9,6 +9,17 @@ import picocli.CommandLine.Command;
         subcommands={ConfigureCommand.class,
         Send.class
         },
+        header = {
+                "███████╗ ███████╗ ██╗ ████████╗ ██╗  ██╗ ██╗",
+                "██╔════╝ ██╔════╝ ██║ ╚══██╔══╝ ██║  ██║ ██║",
+                "███████╗ █████╗   ██║    ██║    ███████║ ██║",
+                "╚════██║ ██╔══╝   ██║    ██║    ██╔══██║ ██║",
+                "███████║ ███████╗ ██║    ██║    ██║  ██║ ██║",
+                "╚══════╝ ╚══════╝ ╚═╝    ╚═╝    ╚═╝  ╚═╝ ╚═╝",
+                "",
+                "Seithi - WhatsApp Messaging CLI",
+                ""
+        },
         mixinStandardHelpOptions = true,
         version="seithi 1.0",
         description="Open source messaging automation toolkit."
