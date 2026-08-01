@@ -11,9 +11,6 @@ import java.util.Map;
 
 public class WhatsAppService {
 
-    private String message;
-    private String phoneNumber;
-
     public void sendText(String phoneNo,String message){
 
         WhatsAppConfigReader whatsAppConfigReader= new WhatsAppConfigReader();
@@ -24,29 +21,18 @@ public class WhatsAppService {
 
     }
 
-    public void sendText(String message){
-
-        WhatsAppConfigReader whatsAppConfigReader= new WhatsAppConfigReader();
-        WhatsAppClient whatsAppClient=new WhatsAppClient();
-
-        whatsAppConfigReader.loadConfig();
-        whatsAppClient.sendText(phoneNumber,message, whatsAppConfigReader.getApiVersion(), whatsAppConfigReader.getPhoneNumberId(), whatsAppConfigReader.getAccessToken());
-
-    }
-
-    public void sendCommandDetails(Path file, String message){
+    public void sendCommandDetails(Path file,String message){
         ReadExcel readExcel=new ReadExcel(file);
         try {
-            this.message=message;
-            readExcel.readDataLineByLine();
+            readExcel.readDataLineByLine(message);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void sendDetails(Map<String,String> rowMap){
+    public void sendDetails(Map<String,String> rowMap,String message){
         TemplateEngine templateEngine=new TemplateEngine();
-        phoneNumber=rowMap.get("phone number");
-        templateEngine.matcher(message,rowMap);
+        String phoneNumber=rowMap.get("phone number");
+        templateEngine.matcher(message,rowMap,phoneNumber);
     }
 }

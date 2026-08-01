@@ -57,7 +57,7 @@
 
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.seithi.SeithiApplication</mainClass>
+                                    <mainClass>com.pranavd.seithi.SeithiApplication</mainClass>
                                 </transformer>
                             </transformers>
 

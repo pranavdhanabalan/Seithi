@@ -20,7 +20,7 @@ public class ReadExcel {
         FILE_PATH=path;
     }
 
-    public void readDataLineByLine() throws IOException{
+    public void readDataLineByLine(String message) throws IOException{
 
         try (InputStream inp = new FileInputStream(FILE_PATH.toFile())) {
             Workbook wb = WorkbookFactory.create(inp);
@@ -51,7 +51,7 @@ public class ReadExcel {
                     rowMap.put(headers.get(j),cellValue);
                 }
                 WhatsAppService whatsAppService=new WhatsAppService();
-                whatsAppService.sendDetails(rowMap);
+                whatsAppService.sendDetails(rowMap,message);
             }
 
         }

@@ -8,7 +8,11 @@ import java.util.regex.Pattern;
 
 public class TemplateEngine {
 
-    public void matcher(String template, Map<String,String> rowMap){
+    public void matcher(String template, Map<String,String> rowMap,String phoneNumber){
+
+        if (template == null) {
+            throw new IllegalArgumentException("Message template cannot be null.");
+        }
 
         Pattern pattern=Pattern.compile("\\{([^}]*)\\}");
         Matcher matcher=pattern.matcher(template);
@@ -22,8 +26,6 @@ public class TemplateEngine {
         }
         matcher.appendTail(message);
         WhatsAppService whatsAppService=new WhatsAppService();
-        whatsAppService.sendText(String.valueOf(message));
+        whatsAppService.sendText(phoneNumber,String.valueOf(message));
     }
-
-
 }
