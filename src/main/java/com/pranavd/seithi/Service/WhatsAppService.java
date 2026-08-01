@@ -46,7 +46,7 @@ public class WhatsAppService {
 
     public void sendDetails(Map<String,String> rowMap){
         TemplateEngine templateEngine=new TemplateEngine();
-        templateEngine.matcher(message,rowMap);
         phoneNumber=rowMap.get("phone number");
+        templateEngine.matcher(message,rowMap);
     }
 }

@@ -7,8 +7,7 @@ import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
 @Command(name="seithi",
-        subcommands={WhatsAppConfigCommand.class,
-        Send.class
+        subcommands={WhatsAppConfigCommand.class
         },
         header = {
                 "███████╗ ███████╗ ██╗ ████████╗ ██╗  ██╗ ██╗",

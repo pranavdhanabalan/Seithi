@@ -39,7 +39,7 @@ public class ReadExcel {
                 headers.add(formatter.formatCellValue(cell));
             }
 
-            for (int i=1;i<sheet.getLastRowNum();i++){
+            for (int i=1;i<=sheet.getLastRowNum();i++){
                 Row row=sheet.getRow(i);
                 if (row==null){
                     continue;

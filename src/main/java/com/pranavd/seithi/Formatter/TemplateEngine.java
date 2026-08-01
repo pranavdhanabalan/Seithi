@@ -18,8 +18,9 @@ public class TemplateEngine {
         while(matcher.find()){
             String column = matcher.group(1);
             String value = rowMap.getOrDefault(column.toLowerCase(), "");
-            matcher.appendReplacement(message, value);
+            matcher.appendReplacement(message,matcher.quoteReplacement(value));
         }
+        matcher.appendTail(message);
         WhatsAppService whatsAppService=new WhatsAppService();
         whatsAppService.sendText(String.valueOf(message));
     }
