@@ -1,9 +1,11 @@
 package com.pranavd.seithi.Commands.WhatsApp;
 
+import com.pranavd.seithi.PipelineManager;
 import com.pranavd.seithi.Service.WhatsAppService;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 
+import java.nio.channels.Pipe;
 import java.nio.file.Path;
 
 @Command(
@@ -28,7 +30,6 @@ public class Bulk implements Runnable{
 
     @Override
     public void run(){
-        WhatsAppService whatsAppService=new WhatsAppService();
-        whatsAppService.sendCommandDetails(file,message);
+
     }
 }
